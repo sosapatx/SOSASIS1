@@ -35,7 +35,7 @@ class SolicitanteController extends Controller
     	$solicitante->curp=strtoupper($request->get('curp'));
         $solicitante->nombreS=strtoupper($request->get('nombreS')); 
     	$solicitante->direccionS=strtoupper($request->get('direccionS'));
-    	$solicitante->telefono=$request->get('telefono');
+    	$solicitante->telefonoS=$request->get('telefonoS');
     	$solicitante->celular=$request->get('celular');
         $solicitante->coloniaS=strtoupper($request->get('coloniaS'));
         $solicitante->rfc=strtoupper($request->get('rfc'));

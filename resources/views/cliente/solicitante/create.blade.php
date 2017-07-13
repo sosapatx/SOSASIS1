@@ -33,8 +33,8 @@
 			</div>
 
 			<div class="form-group">
-				<label for="telefono">Telefono</label>
-				<input type="text" class="form-control" name="telefono" placeholder="Telefono...">
+				<label for="telefonoS">Telefono</label>
+				<input type="text" class="form-control" name="telefonoS" placeholder="Telefono...">
 			</div>
 
 			<div class="form-group">
@@ -43,13 +43,18 @@
 			</div>
 
 			<div class="form-group">
-				<label for="colonia">Colonia</label>
-				<input type="text" class="form-control" name="colonia" placeholder="Colonia...">
+				<label for="Colonia">Colonia</label>
+				<input type="text" class="form-control" name="Colonia" placeholder="Colonia...">
 			</div>
 
 			<div class="form-group">
 				<label for="rfc">R.F.C.</label>
 				<input type="text" class="form-control" name="rfc" placeholder="RFC...">
+			</div>
+			
+			<div class="form-group">
+				<label for="email">e-mail</label>
+				<input type="text" class="form-control" name="email" placeholder="nombre@correo.com...">
 			</div>
 
 			<div class="form-group">
