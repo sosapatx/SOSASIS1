@@ -3,7 +3,7 @@
 
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-			<h3>EDITAR RUTA {{$ruta->noRuta}}</h3>
+			<h3>EDITAR RUTA {{$ruta->nRuta}}</h3>
 
 			@if(count ($errors)>0)
 			<div class="alert alert-danger">
@@ -15,7 +15,7 @@
 			</div>
 			@endif
 
-			{{ Form::model($ruta, array('route'=>array('Ruta.update',$ruta->noRuta), 'method'=>'PATCH')) }}
+			{{ Form::model($ruta, array('route'=>array('Ruta.update',$ruta->nRuta), 'method'=>'PATCH')) }}
             {{Form::token()}}
 
 

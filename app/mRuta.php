@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class mRuta extends Model
 {
-    protected $table='ruta';
+    protected $table='Rutas';
 
-    protected $primaryKey='noRuta';
+    protected $primaryKey='nRuta';
 
     public $timestamps=false;
 

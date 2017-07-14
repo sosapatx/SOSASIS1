@@ -19,11 +19,11 @@
 				</thead>
                @foreach ($ruta as $rut)
 				<tr>
-					<td>{{ $rut->noRuta}}</td>
+					<td>{{ $rut->nRuta}}</td>
 					<td>{{ $rut->calle}}</td>
 					<td>{{ $rut->colonia}}</td>
 					<td>
-						<a href="{{URL::action('RutaController@edit',$rut->noRuta)}}"><button class="btn btn-info">Editar</button></a>
+						<a href="{{URL::action('RutaController@edit',$rut->nRuta)}}"><button class="btn btn-info">Editar</button></a>
 
 						
 					</td>

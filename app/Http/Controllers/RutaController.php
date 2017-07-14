@@ -21,11 +21,11 @@ class RutaController extends Controller
     {
         if($request){
           $query=trim($request->get('searchText'));
-            $ruta=DB::table('ruta')->where('noRuta','LIKE','%'.$query.'%')
+            $ruta=DB::table('Rutas')->where('nRuta','LIKE','%'.$query.'%')
             ->orwhere('calle','LIKE','%'.$query.'%')
-            ->orderBy('noRuta','desc')
+            ->orderBy('nRuta','desc')
             ->paginate(7);
-            return view('cliente.Ruta.index',["ruta"=>$ruta,"searchText"=>$query]);
+            return view('cliente.Ruta.index',["Rutas"=>$ruta,"searchText"=>$query]);
         }
     }
 
@@ -74,7 +74,7 @@ class RutaController extends Controller
      */
     public function edit($id)
     {
-        return view("cliente.Ruta.edit",["ruta"=>mRuta::findOrFail($id)]);
+        return view("cliente.Ruta.edit",["Rutas"=>mRuta::findOrFail($id)]);
     }
 
     /**
