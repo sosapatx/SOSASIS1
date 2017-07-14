@@ -2,7 +2,7 @@
 @section ('contenido')
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		<h3>LISTADO DE RUTAS ya funciona el git<a href="Ruta/create"><button class="btn btn-success">Nuevo</button></a></h3>
+		<h3>LISTADO DE RUTAS<a href="Ruta/create"><button class="btn btn-success">Nuevo</button></a></h3>
 		@include('cliente.Ruta.search')
 	</div>
 </div>
@@ -17,7 +17,7 @@
 					<th>Colonia</th>
 					<th>Opciones</th>
 				</thead>
-               @foreach ($ruta as $rut)
+               @foreach ($Rutas as $rut)
 				<tr>
 					<td>{{ $rut->nRuta}}</td>
 					<td>{{ $rut->calle}}</td>
@@ -31,7 +31,7 @@
 				@endforeach
 			</table>
 		</div>
-		{{$ruta->render()}}
+		{{$Rutas->render()}}
 	</div>
 </div>
 @endsection
