@@ -21,12 +21,12 @@
 
 			<div class="form-group">
 				<label for="calle">Calle</label>
-				<input type="text" class="form-control" name="calle" value="{{$Rutas->calle}}">
+				<input type="text" class="form-control" name="calle" value="{{$Rutas->Calle}}">
 			</div>
 
 			<div class="form-group">
 				<label for="colonia">Colonia</label>
-				<input type="text" class="form-control" name="colonia" value="{{$Rutas->colonia}}">
+				<input type="text" class="form-control" name="colonia" value="{{$Rutas->Colonia}}">
 			</div>
 
 			<div class="form-group">
