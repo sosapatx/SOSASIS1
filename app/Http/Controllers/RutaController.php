@@ -89,7 +89,7 @@ class RutaController extends Controller
         $Rutas=mRuta::findOrFail($id);
         //$ruta->noRuta=$request->get('noRuta');
         $Rutas->calle=$request->get('calle');
-        $Rutas|->colonia=$request->get('colonia');
+        $Rutas->colonia=$request->get('colonia');
         $Rutas->update();
         return Redirect::to('cliente/Ruta');
     }
