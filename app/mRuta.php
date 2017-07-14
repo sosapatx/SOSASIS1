@@ -14,7 +14,7 @@ class mRuta extends Model
 
     protected $fillable=[
     	//'noRuta',
-    	'calle',
-    	'colonia'
+    	'Calle',
+    	'Colonia'
     ];
 }

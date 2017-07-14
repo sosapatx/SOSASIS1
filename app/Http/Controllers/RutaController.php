@@ -22,7 +22,7 @@ class RutaController extends Controller
         if($request){
           $query=trim($request->get('searchText'));
             $Rutas=DB::table('Rutas')->where('nRuta','LIKE','%'.$query.'%')
-            ->orwhere('calle','LIKE','%'.$query.'%')
+            ->orwhere('Calle','LIKE','%'.$query.'%')
             ->orderBy('nRuta','desc')
             ->paginate(7);
             return view('cliente.Ruta.index',["Rutas"=>$Rutas,"searchText"=>$query]);
@@ -49,8 +49,8 @@ class RutaController extends Controller
     {
         $Rutas=new mRuta;
         //$ruta->noRuta=$request->get('noRuta');
-        $Rutas->calle=$request->get('calle');
-        $Rutas->colonia=$request->get('colonia');
+        $Rutas->Calle=$request->get('calle');
+        $Rutas->Colonia=$request->get('colonia');
         $Rutas->save();
         return Redirect::to('cliente/Ruta');
     }
@@ -88,8 +88,8 @@ class RutaController extends Controller
     {
         $Rutas=mRuta::findOrFail($id);
         //$ruta->noRuta=$request->get('noRuta');
-        $Rutas->calle=$request->get('calle');
-        $Rutas->colonia=$request->get('colonia');
+        $Rutas->Calle=$request->get('calle');
+        $Rutas->Colonia=$request->get('colonia');
         $Rutas->update();
         return Redirect::to('cliente/Ruta');
     }

@@ -20,8 +20,8 @@
                @foreach ($Rutas as $rut)
 				<tr>
 					<td>{{ $rut->nRuta}}</td>
-					<td>{{ $rut->calle}}</td>
-					<td>{{ $rut->colonia}}</td>
+					<td>{{ $rut->Calle}}</td>
+					<td>{{ $rut->Colonia}}</td>
 					<td>
 						<a href="{{URL::action('RutaController@edit',$rut->nRuta)}}"><button class="btn btn-info">Editar</button></a>
 
