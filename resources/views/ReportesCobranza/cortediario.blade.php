@@ -73,12 +73,13 @@ echo $_SESSION['usuario'];
 				</thead>
 				<tbody>
 				<?php
-				$cob=App\cobranza::all();
+				use Illuminate\Support\Facades\DB;
+				$cob=DB::table('Cobranza')->get();
 				
 				$total=0;
 				$count=0;
 					foreach($cob as $key =>$c){
-					if(($c->Fecha_P==date('Y').('-').date('m').('-').date('d'))&($c->Pagado==('1'))){
+					if(($c->Fecha_P==date('Y').('-').date('m').('-').date('d'))&($c->pagado==('1'))){
 						
 				?>
 						<tr>

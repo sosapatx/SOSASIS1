@@ -47,7 +47,7 @@ class Cobranza1Controller extends Controller
            ->select('c.NContrato','s.CURP','s.nombreS','s.telefonoS','s.Colonia','c.TipoToma','c.FechaContrato','c.EdoToma')
             ->get();
         $cobranzas=DB::table('CatCobros')->get();
-        return view("Cobros.create",["cobranzas"=>$cobranzas,"contrato"=>$contrato,'cob'=>DB::table('cobranza')->get()]);
+        return view("Cobros.create",["cobranzas"=>$cobranzas,"contrato"=>$contrato,'cob'=>DB::table('Cobranza')->get()]);
     }else{
 
     }
