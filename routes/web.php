@@ -20,7 +20,6 @@ Route::resource('cliente/Predio','PredioController');
 Route::resource('cliente/Ruta','RutaController');
 Route::resource('cliente/Contrato', 'ContratoController');
 Route::resource('cliente/ListaContratos','ListaContratosController');
-<?php
 
 /*
 |--------------------------------------------------------------------------
