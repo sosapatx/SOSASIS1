@@ -131,7 +131,7 @@ $arrayMeses = array('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
 	$ano=date('Y');
 	$actual=date('Y-m-j');
 
-	$cb=DB::table('contratos')->get();
+	$cb=DB::table('Contratos')->get();
 	$day=date("j");
 	foreach ($cb as $key => $c) {
 		$test=DB::table('cobranza')
@@ -177,7 +177,7 @@ $arrayMeses = array('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
 
 	
 $consulta=DB::table('cobranza as cz')
-	->join('contratos as c','c.NContrato','=','cz.NContrato')
+	->join('Contratos as c','c.NContrato','=','cz.NContrato')
 	->select('cz.Periodo','cz.Anio','cz.idCobranza','cz.pagado','c.EdoToma', 'c.NContrato','cz.CveConcepto')
 	->get();
 
@@ -199,7 +199,7 @@ $rezagos=DB::table('rezago2')
 	->get();
 	foreach ($eliminar as $key => $e) {
 		$cn=DB::table('cobranzas')
-		->where('contrato',$e->nContrato)
+		->where('NContrato',$e->nContrato)
 		//->where('Clave_conceptoCobros',5)
 		->orderBy('id','desc')
 		->first();		

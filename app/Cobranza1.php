@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace sosapatex;
 
 use Illuminate\Database\Eloquent\Model;
 
