@@ -14,7 +14,7 @@ class mSolicitante extends Model
     public $timestamps=false;
 
     protected $fillable=[
-    	'curp',
+    	'CURP',
     	'nombreS',
     	'direccionS'
     ];

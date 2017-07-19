@@ -3,7 +3,7 @@
 	<h3>Create</h3>
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-			<h3>EDITAR SOLICITANTE:  {{$solicitante->curp}}</h3>
+			<h3>EDITAR SOLICITANTE:  {{$solicitante->CURP}}</h3>
 
 			@if(count ($errors)>0)
 			<div class="alert alert-danger">
@@ -18,8 +18,8 @@
 			{{ Form::model($solicitante, array('route'=>array('solicitante.update',$solicitante->idSolicitante), 'method'=>'PATCH')) }}
             {{Form::token()}}
 			<div class="form-group">
-				<label for="curp">Curp</label>
-				<input type="text" class="form-control" name="curp" value="{{$solicitante->curp}}">
+				<label for="CURP">Curp</label>
+				<input type="text" class="form-control" name="CURP" value="{{$solicitante->CURP}}">
 			</div>
 
 			<div class="form-group">
@@ -43,13 +43,18 @@
 			</div>
 			
 			<div class="form-group">
-				<label for="coloniaS">Colonia</label>
-				<input type="text" class="form-control" name="coloniaS" value="{{$solicitante->coloniaS}}">
+				<label for="colonia">Colonia</label>
+				<input type="text" class="form-control" name="colonia" value="{{$solicitante->colonia}}">
 			</div>
 
 			<div class="form-group">
 				<label for="rfc">R.F.C.</label>
 				<input type="text" class="form-control" name="rfc" value="{{$solicitante->rfc}}">
+			</div>
+			
+			<div class="form-group">
+				<label for="email">e-mail</label>
+				<input type="text" class="form-control" name="email" value="{{$solicitante->email}}">
 			</div>
 
 			<div class="form-group">

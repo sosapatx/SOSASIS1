@@ -26,9 +26,9 @@
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 			<div class="form-group">
 				<label for="curpP">Curp Solicitante</label>
-				<select name="curpP" class="form-control">
+				<select name="CURP" class="form-control">
 					@foreach($solicitante as $sol)
-						<option value="{{$sol->curp}}">{{$sol->curp}}  {{$sol->nombreS}} </option>
+						<option value="{{$sol->CURP}}">{{$sol->CURP}}  {{$sol->nombreS}} </option>
 					@endforeach
 				</select>
 			</div>

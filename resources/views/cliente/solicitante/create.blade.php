@@ -17,9 +17,10 @@
 
 			{!!Form::open(array('url'=>'cliente/solicitante','method'=>'POST','autocomplete'=>'off'))!!}
             {{Form::token()}}
+			
 			<div class="form-group">
-				<label for="curp">Curp</label>
-				<input type="text" class="form-control" placeholder="CURP..." name="curp">
+				<label for="CURP">Curp</label>
+				<input type="text" class="form-control" placeholder="CURP..." name="CURP">
 			</div>
 
 			<div class="form-group">
@@ -33,9 +34,10 @@
 			</div>
 
 			<div class="form-group">
-				<label for="telefono">Telefono</label>
-				<input type="text" class="form-control" name="telefono" placeholder="Telefono...">
+				<label for="telefonoS">Telefono</label>
+				<input type="text" class="form-control" name="telefonoS" placeholder="Telefono...">
 			</div>
+
 
 			<div class="form-group">
 				<label for="celular">Celular</label>
@@ -43,8 +45,8 @@
 			</div>
 
 			<div class="form-group">
-				<label for="colonia">Colonia</label>
-				<input type="text" class="form-control" name="colonia" placeholder="Colonia...">
+				<label for="Colonia">Colonia</label>
+				<input type="text" class="form-control" name="Colonia" placeholder="Colonia...">
 			</div>
 
 			<div class="form-group">
@@ -53,7 +55,13 @@
 			</div>
 
 			<div class="form-group">
+				<label for="email">e-mail</label>
+				<input type="text" class="form-control" name="email" placeholder="persona@correo...">
+			</div>
+
+			<div class="form-group">
 				<button class="btn btn-primary" type="submint">Guardar</button>
+				<br>
 				<button class="btn btn-danger" type="reset">Cancelar</button>
 			</div>
 			{!!Form::close()!!}

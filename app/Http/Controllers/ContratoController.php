@@ -21,11 +21,11 @@ class ContratoController extends Controller
     {
         if($request){
           $query=trim($request->get('searchText'));
-            $contrato=DB::table('contrato')->where('noContrato','LIKE','%'.$query.'%')
-            ->orwhere('curpC','LIKE','%'.$query.'%')
-            ->orderBy('noContrato','desc')
+            $Contratos=DB::table('Contratos')->where('NContrato','LIKE','%'.$query.'%')
+            ->orwhere('CURP','LIKE','%'.$query.'%')
+            ->orderBy('NContrato','desc')
             ->paginate(7);
-            return view('cliente.Contrato.index',["contrato"=>$contrato,"searchText"=>$query]);
+            return view('cliente.Contrato.index',["Contratos"=>$Contratos,"searchText"=>$query]);
         }
     }
 
@@ -36,11 +36,11 @@ class ContratoController extends Controller
      */
     public function create()
     {   
-        $ruta=DB::table('ruta')->where('noRuta','>=','0')->get();
+        $ruta=DB::table('Rutas')->where('nRuta','>=','0')->get();
 
         $predio=DB::table('predio')
-        ->join ('solicitante','predio.curpP','=','solicitante.curp')
-        ->select('predio.curpP','solicitante.nombreS' )
+        ->join ('solicitante','Predio.CURP','=','solicitante.CURP')
+        ->select('predio.CURP','solicitante.nombreS' )
         ->get();
 
         $fecha=Carbon::now();
@@ -58,18 +58,19 @@ class ContratoController extends Controller
     public function store(ContratoFormRequest $request)
     {
         $contrato=new mContrato;
-        $contrato->curpC=$request->get('curpC');
-        $contrato->rutaC=$request->get('rutaC');
-        $contrato->descuento=strtoupper($request->get('descuento'));
-        $contrato->noMedidor=strtoupper($request->get('noMedidor'));
-        $contrato->marca=strtoupper($request->get('marca'));
-        $contrato->diametroToma=$request->get('diametroToma');
-        $contrato->tipoToma=strtoupper($request->get('tipoToma'));
-        $contrato->edoToma=strtoupper($request->get('edoToma'));
-        $contrato->clasificacion=strtoupper($request->get('clasificacion'));
-        $contrato->fechaContrato=strtoupper($request->get('fechaContrato'));
-        $contrato->longuitud=strtoupper($request->get('longuitud'));
-        $contrato->latitud=strtoupper($request->get('latitud'));
+        $contrato->CURP=$request->get('CURP');
+        $contrato->nRuta=$request->get('rutaC');
+        $contrato->Descuento=strtoupper($request->get('descuento'));
+        $contrato->NMedidor=strtoupper($request->get('noMedidor'));
+        $contrato->Marca=strtoupper($request->get('marca'));
+        $contrato->DiametroToma=$request->get('diametroToma');
+        $contrato->TipoToma=strtoupper($request->get('tipoToma'));
+        $contrato->EdoToma=strtoupper($request->get('edoToma'));
+        $contrato->Clasificacion=strtoupper($request->get('clasificacion'));
+        $contrato->FechaContrato=strtoupper($request->get('fechaContrato'));
+        $contrato->Longuitud=strtoupper($request->get('longuitud'));
+        $contrato->Latitud=strtoupper($request->get('latitud'));
+        $contrato->clave_TA=strtoupper($request->get('clave_TA'));
         $contrato->save();
         return Redirect::to('cliente/Contrato');
     }
@@ -107,19 +108,20 @@ class ContratoController extends Controller
     public function update(ContratoFormRequest $request, $id)
     {
         $contrato=mContrato::findOrFail($id);
-        $contrato->predioC=strtoupper($request->get('predioC'));
-        $contrato->curpC=strtoupper($request->get('curpC'));
-        $contrato->rutaC=strtoupper($request->get('rutaC'));
-        $contrato->descuento=strtoupper($request->get('descuento'));
-        $contrato->noMedidor=strtoupper($request->get('noMedidor'));
-        $contrato->marca=strtoupper($request->get('marca'));
-        $contrato->diametroToma=strtoupper($request->get('diametroToma'));
-        $contrato->tipoToma=strtoupper($request->get('tipoToma'));
-        $contrato->edoToma=strtoupper($request->get('edoToma'));
-        $contrato->clasificacion=strtoupper($request->get('clasificacion'));
-        $contrato->fechaContrato=strtoupper($request->get('fechaContrato'));
-        $contrato->longuitud=strtoupper($request->get('longuitud'));
-        $contrato->latitud=strtoupper($request->get('latitud'));
+        //$contrato->predioC=strtoupper($request->get('predioC'));
+        $contrato->CURP=strtoupper($request->get('CURP'));
+        $contrato->nRuta=strtoupper($request->get('rutaC'));
+        $contrato->Descuento=strtoupper($request->get('descuento'));
+        $contrato->NMedidor=strtoupper($request->get('noMedidor'));
+        $contrato->Marca=strtoupper($request->get('marca'));
+        $contrato->DiametroToma=strtoupper($request->get('diametroToma'));
+        $contrato->TipoToma=strtoupper($request->get('tipoToma'));
+        $contrato->EdoToma=strtoupper($request->get('edoToma'));
+        $contrato->Clasificacion=strtoupper($request->get('clasificacion'));
+        $contrato->FechaContrato=strtoupper($request->get('fechaContrato'));
+        $contrato->Longuitud=strtoupper($request->get('longuitud'));
+        $contrato->Latitud=strtoupper($request->get('latitud'));
+        $contrato->clave_TA=1;//strtoupper($request->get('clave_TA'));
         $contrato->update();
         return Redirect::to('cliente/Contrato');
     }

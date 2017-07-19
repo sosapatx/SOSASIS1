@@ -23,7 +23,7 @@ class SolicitanteFormRequest extends Request
     public function rules()
     {
         return [
-            'curp'=>'required',
+            'CURP'=>'required',
             'nombreS'=>'required',
             'direccionS'=>'required'
         ];

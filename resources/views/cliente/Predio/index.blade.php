@@ -33,22 +33,21 @@
 				</thead>
                @foreach ($predio as $pre)
 				<tr>
-					<td>{{ $pre->idPredio}}</td>
-					<td>{{ $pre->curpP}}</td>
-					<td>{{ $pre->direccion}}</td>
-					<td>{{ $pre->colonia}}</td>
-					<td>{{ $pre->localidad}}</td>
-					<td>{{ $pre->transversal1}}</td>
-					<td>{{ $pre->transversal2}}</td>
-					<td>{{ $pre->manzana}}</td>
-					<td>{{ $pre->lote}}</td>
-					<td>{{ $pre->frente_mtrs}}</td>
-					<td>{{ $pre->fondo_mtrs}}</td>
-					<td>{{ $pre->superficie}}</td>
+					<td>{{ $pre->IdPredio}}</td>
+					<td>{{ $pre->CURP}}</td>
+					<td>{{ $pre->Direccion}}</td>
+					<td>{{ $pre->Colonia}}</td>
+					<td>{{ $pre->Localidad}}</td>
+					<td>{{ $pre->Transversal1}}</td>
+					<td>{{ $pre->Transversal2}}</td>
+					<td>{{ $pre->Manzana}}</td>
+					<td>{{ $pre->Lote}}</td>
+					<td>{{ $pre->Frente_mtrs}}</td>
+					<td>{{ $pre->Fondo_mtrs}}</td>
+					<td>{{ $pre->Superficie}}</td>
 					<td>
-						<a href="{{URL::action('PredioController@edit',$pre->idPredio)}}"><button class="btn btn-info">Editar</button></a>
+						<a href="{{URL::action('PredioController@edit',$pre->IdPredio)}}"><button class="btn btn-info">Editar</button></a>
 						
-                        <!--<a href="" data-target="#modal-delete-{{$pre->curpP}}" data-toggle="modal"><button class="btn btn-danger">Eliminar</button></a>-->
 					</td>
 				</tr>
 				@endforeach

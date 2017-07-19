@@ -2,7 +2,8 @@
 @section ('contenido')
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-		<h3>LISTADO DE CONTRATOS <a href="Contrato/create"><button class="btn btn-success">Nuevo</button></a></h3>
+		<h3>LISTADO DE CONTRATOS </h3>
+		<a href="Contrato/create"><button class="btn btn-success">Nuevo</button></a>
 		@include('cliente.Contrato.search')
 	</div>
 </div>
@@ -30,30 +31,30 @@
 					<th>latitud</th>
 					<th>Opciones</th>
 				</thead>
-               @foreach ($contrato as $con)
+               @foreach ($Contratos as $con)
 				<tr>
 					
-					<td>{{ $con->noContrato}}</td>
-					<td>{{ $con->curpC}}</td>
-					<td>{{ $con->rutaC}}</td>
-					<td>{{ $con->descuento}}</td>
-					<td>{{ $con->noMedidor}}</td>
-					<td>{{ $con->marca}}</td>
-					<td>{{ $con->diametroToma}}</td>
-					<td>{{ $con->tipoToma}}</td>
-					<td>{{ $con->edoToma}}</td>
-					<td>{{ $con->clasificacion}}</td>
-					<td>{{ $con->fechaContrato}}</td>
-					<td>{{ $con->longuitud}}</td>
-					<td>{{ $con->latitud}}</td>
+					<td>{{ $con->NContrato}}</td>
+					<td>{{ $con->CURP}}</td>
+					<td>{{ $con->nRuta}}</td>
+					<td>{{ $con->Descuento}}</td>
+					<td>{{ $con->NMedidor}}</td>
+					<td>{{ $con->Marca}}</td>
+					<td>{{ $con->DiametroToma}}</td>
+					<td>{{ $con->TipoToma}}</td>
+					<td>{{ $con->EdoToma}}</td>
+					<td>{{ $con->Clasificacion}}</td>
+					<td>{{ $con->FechaContrato}}</td>
+					<td>{{ $con->Longuitud}}</td>
+					<td>{{ $con->Latitud}}</td>
 					<td>
-						<a href="{{URL::action('ContratoController@edit',$con->noContrato)}}"><button class="btn btn-info">Editar</button></a>
+						<a href="{{URL::action('ContratoController@edit',$con->NContrato)}}"><button class="btn btn-info">Editar</button></a>
 					</td>
 				</tr>
 				@endforeach
 			</table>
 		</div>
-		{{$contrato->render()}}
+		{{$Contratos->render()}}
 	</div>
 </div>
 @endsection

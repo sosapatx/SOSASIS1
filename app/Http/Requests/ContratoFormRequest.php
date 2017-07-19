@@ -24,15 +24,8 @@ class ContratoFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'curpC'=>'required',
-            'rutaC'=>'required',
-            'descuento'=>'required',
-            'noMedidor'=>'required',
-            'marca'=>'required',
-            'tipoToma'=>'required',
-            'edoToma'=>'required',
-            'clasificacion'=>'required',
-            'fechaContrato'=>'required',
+            'CURP'=>'required',
+            'rutaC'=>'required'
         ];
     }
 }

@@ -23,10 +23,10 @@
 	<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
 
 			<div class="form-group">
-				<label for="curpC">CURP</label>
-				<select name="curpC" class="form-control">
+				<label for="CURP">CURP</label>
+				<select name="CURP" class="form-control">
 					@foreach($predio as $pre)
-						<option value="{{$pre->curpP}}">{{$pre->curpP}} {{$pre->nombreS}}</option>
+						<option value="{{$pre->CURP}}">{{$pre->CURP}} {{$pre->nombreS}}</option>
 					@endforeach
 				</select>
 			</div>
@@ -35,7 +35,7 @@
 				<label for="rutaC">RUTA</label>
 				<select name="rutaC" class="form-control">
 					@foreach($ruta as $rut)
-						<option value="{{$rut->noRuta}}">{{$rut->noRuta}} {{$rut->calle}}</option>
+						<option value="{{$rut->nRuta}}">{{$rut->nRuta}} {{$rut->Calle}}</option>
 					@endforeach
 				</select>
 			</div>

@@ -21,11 +21,11 @@ class RutaController extends Controller
     {
         if($request){
           $query=trim($request->get('searchText'));
-            $ruta=DB::table('ruta')->where('noRuta','LIKE','%'.$query.'%')
-            ->orwhere('calle','LIKE','%'.$query.'%')
-            ->orderBy('noRuta','desc')
+            $Rutas=DB::table('Rutas')->where('nRuta','LIKE','%'.$query.'%')
+            ->orwhere('Calle','LIKE','%'.$query.'%')
+            ->orderBy('nRuta','desc')
             ->paginate(7);
-            return view('cliente.Ruta.index',["ruta"=>$ruta,"searchText"=>$query]);
+            return view('cliente.Ruta.index',["Rutas"=>$Rutas,"searchText"=>$query]);
         }
     }
 
@@ -47,11 +47,11 @@ class RutaController extends Controller
      */
     public function store(RutaFormRequest $request)
     {
-        $ruta=new mRuta;
+        $Rutas=new mRuta;
         //$ruta->noRuta=$request->get('noRuta');
-        $ruta->calle=$request->get('calle');
-        $ruta->colonia=$request->get('colonia');
-        $ruta->save();
+        $Rutas->Calle=$request->get('calle');
+        $Rutas->Colonia=$request->get('colonia');
+        $Rutas->save();
         return Redirect::to('cliente/Ruta');
     }
 
@@ -74,7 +74,7 @@ class RutaController extends Controller
      */
     public function edit($id)
     {
-        return view("cliente.Ruta.edit",["ruta"=>mRuta::findOrFail($id)]);
+        return view("cliente.Ruta.edit",["Rutas"=>mRuta::findOrFail($id)]);
     }
 
     /**
@@ -86,11 +86,11 @@ class RutaController extends Controller
      */
     public function update(RutaFormRequest $request, $id)
     {
-        $ruta=mRuta::findOrFail($id);
+        $Rutas=mRuta::findOrFail($id);
         //$ruta->noRuta=$request->get('noRuta');
-        $ruta->calle=$request->get('calle');
-        $ruta->colonia=$request->get('colonia');
-        $ruta->update();
+        $Rutas->Calle=$request->get('calle');
+        $Rutas->Colonia=$request->get('colonia');
+        $Rutas->update();
         return Redirect::to('cliente/Ruta');
     }
 

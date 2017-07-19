@@ -6,24 +6,25 @@ use Illuminate\Database\Eloquent\Model;
 
 class mContrato extends Model
 {
-	protected $table='contrato';
+	protected $table='Contratos';
 
-	protected $primaryKey='noContrato';
+	protected $primaryKey='NContrato';
 
 	public $timestamps=false;
 
 	protected $fillable=[ 
-        'curpC',
-        'rutaC',
-        'descuento',
-        'noMedidor',
-        'marca',
-        'diametroToma',
-        'tipoToma',
-        'edoToma',
-        'clasificacion',
-        'fechaContrato',
-        'longuitud',
-        'latitud'
+        'CURP',
+        'nRuta',
+        'Descuento',
+        'NMedidor',
+        'Marca',
+        'DiametroToma',
+        'TipoToma',
+        'EdoToma',
+        'Clasificacion',
+        'FechaContrato',
+        'Longuitud',
+        'Latitud',
+        'clave_TA'
     ];
 }

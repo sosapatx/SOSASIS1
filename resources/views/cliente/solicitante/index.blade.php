@@ -28,26 +28,26 @@
 					<th>Celular</th>
 					<th>Colonia</th>
 					<th>RFC</th>
+					<th>email</th>
 					<th>Opciones</th>
 				</thead>
                @foreach ($solicitante as $sol)
 				<tr>
 					<td>{{ $sol->idSolicitante}}</td>
-					<td>{{ $sol->curp}}</td>
+					<td>{{ $sol->CURP}}</td>
 					<td>{{ $sol->nombreS}}</td>
 					<td>{{ $sol->direccionS}}</td>
-					<td>{{ $sol->telefono}}</td>
+					<td>{{ $sol->telefonoS}}</td>
 					<td>{{ $sol->celular}}</td>
-					<td>{{ $sol->coloniaS}}</td>
+					<td>{{ $sol->Colonia}}</td>
 					<td>{{ $sol->rfc}}</td>
+					<td>{{ $sol->email}}</td>
 					<td>
-						<a href="{{URL::action('SolicitanteController@edit',$sol->idSolicitante)}}"><button class="btn btn-info">Editar</button></a>
-						
+						<a href="{{URL::action('SolicitanteController@edit',$sol->idSolicitante)}}"><button class="btn btn-info">Editar</button></a>					
 
                     
 					</td>
 				</tr>
-				@include('cliente.solicitante.modal')
 				@endforeach
 			</table>
 		</div>

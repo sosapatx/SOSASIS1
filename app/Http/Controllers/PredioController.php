@@ -23,8 +23,8 @@ class PredioController extends Controller
     {
         if($request){
           $query=trim($request->get('searchText'));
-            $predio=DB::table('predio')->where('curpP','LIKE','%'.$query.'%')
-            ->orderBy('idPredio','desc')
+            $predio=DB::table('predio')->where('CURP','LIKE','%'.$query.'%')
+            ->orderBy('IdPredio','desc')
             ->paginate(7);
             return view('cliente.predio.index',["predio"=>$predio,"searchText"=>$query]);
         }
@@ -50,17 +50,17 @@ class PredioController extends Controller
     public function store(Request $request)
     {
         $predio=new mPredio;
-        $predio->curpP=$request->get('curpP');
-        $predio->direccion=strtoupper($request->get('direccion')); //$request->get('nombreS');
-        $predio->colonia=strtoupper($request->get('colonia'));
-        $predio->localidad=strtoupper($request->get('localidad'));
-        $predio->transversal1=strtoupper($request->get('transversal1'));
-        $predio->transversal2=strtoupper($request->get('transversal2'));
-        $predio->manzana=strtoupper($request->get('manzana'));
-        $predio->lote=strtoupper($request->get('lote'));
-        $predio->frente_mtrs=strtoupper($request->get('frente_m'));
-        $predio->fondo_mtrs=strtoupper($request->get('fondo_m'));
-        $predio->superficie=strtoupper($request->get('superficie'));
+        $predio->CURP=$request->get('CURP');
+        $predio->Direccion=strtoupper($request->get('direccion')); //$request->get('nombreS');
+        $predio->Colonia=strtoupper($request->get('colonia'));
+        $predio->Localidad=strtoupper($request->get('localidad'));
+        $predio->Transversal1=strtoupper($request->get('transversal1'));
+        $predio->Transversal2=strtoupper($request->get('transversal2'));
+        $predio->Manzana=strtoupper($request->get('manzana'));
+        $predio->Lote=strtoupper($request->get('lote'));
+        $predio->Frente_mtrs=strtoupper($request->get('frente_m'));
+        $predio->Fondo_mtrs=strtoupper($request->get('fondo_m'));
+        $predio->Superficie=strtoupper($request->get('superficie'));
         $predio->save();
         return Redirect::to('cliente/Predio');
     }
@@ -98,17 +98,17 @@ class PredioController extends Controller
     {
         $predio=new mPredio;
         $predio=mPredio::findOrFail($id);
-        $predio->curpP=strtoupper($request->get('curpP'));
-        $predio->direccion=strtoupper($request->get('direccion')); 
-        $predio->colonia=strtoupper($request->get('colonia'));
-        $predio->localidad=strtoupper($request->get('localidad'));
-        $predio->transversal1=strtoupper($request->get('transversal1'));
-        $predio->transversal2=strtoupper($request->get('transversal2'));
-        $predio->manzana=strtoupper($request->get('manzana'));
-        $predio->lote=strtoupper($request->get('lote'));
-        $predio->frente_mtrs=strtoupper($request->get('frente_m'));
-        $predio->fondo_mtrs=strtoupper($request->get('fondo_m'));
-        $predio->superficie=strtoupper($request->get('superficie'));
+        $predio->CURP=strtoupper($request->get('CURP'));
+        $predio->Direccion=strtoupper($request->get('direccion')); 
+        $predio->Colonia=strtoupper($request->get('colonia'));
+        $predio->Localidad=strtoupper($request->get('localidad'));
+        $predio->Transversal1=strtoupper($request->get('transversal1'));
+        $predio->Transversal2=strtoupper($request->get('transversal2'));
+        $predio->Manzana=strtoupper($request->get('manzana'));
+        $predio->Lote=strtoupper($request->get('lote'));
+        $predio->Frente_mtrs=strtoupper($request->get('frente_m'));
+        $predio->Fondo_mtrs=strtoupper($request->get('fondo_m'));
+        $predio->Superficie=strtoupper($request->get('superficie'));
         $predio->update();
         return Redirect::to('cliente/Predio');
     }
@@ -121,9 +121,5 @@ class PredioController extends Controller
      */
     public function destroy($id)
     {
-        $predio=mPredio::findOrFail($id);
-        $predio->manzana='Destroy';
-        $predio->update();
-        return Redirect::to('cliente/Predio');
     }
 }

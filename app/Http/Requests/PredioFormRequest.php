@@ -24,7 +24,7 @@ class PredioFormRequest extends FormRequest
     public function rules()
     {
         return [
-            'curpP'=>'required',
+            'CURP'=>'required',
             'direccion'=>'required',
             'colonia'=>'required',
             'localidad'=>'required'

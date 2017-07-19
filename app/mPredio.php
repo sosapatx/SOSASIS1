@@ -8,14 +8,14 @@ class mPredio extends Model
 {
     protected $table='predio';
 
-    protected $primaryKey='idPredio';
+    protected $primaryKey='IdPredio';
 
     public $timestamps=false;
 
     protected $fillable=[
-    	'curp',
-    	'direccion',
-    	'colonia',
-    	'localidad',
+    	'CURP',
+    	'Direccion',
+    	'Colonia',
+    	'Localidad',
     ];
 }
