@@ -41,6 +41,7 @@ $app->singleton(
     sosapatex\Exceptions\Handler::class
 );
 
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application
