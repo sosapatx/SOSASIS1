@@ -10,6 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use Illuminate\Support\Facedes\Input;
+
+use Illuminate\Support\Facades\DB;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,8 +23,6 @@ Route::resource('cliente/Predio','PredioController');
 Route::resource('cliente/Ruta','RutaController');
 Route::resource('cliente/Contrato', 'ContratoController');
 Route::resource('cliente/ListaContratos','ListaContratosController');
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -173,11 +174,6 @@ $arrayMeses = array('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
 				]);
 		}
 	}
-		
-
-
-
-	
 $consulta=DB::table('Cobranza as cz')
 	->join('Contratos as c','c.NContrato','=','cz.NContrato')
 	->select('cz.Periodo','cz.Anio','cz.idCobranza','cz.pagado','c.EdoToma', 'c.NContrato','cz.CveConcepto')
@@ -195,7 +191,6 @@ $rezagos=DB::table('Rezago2')
 }else{	
 }
 }
-
 
 $eliminar=DB::table('Rezago2')
 	->get();
@@ -216,20 +211,9 @@ $eliminar=DB::table('Rezago2')
 			}
 	}
 
-	
-	
-
-
 	$cortem=App\cobranza::all();
 	$cortemrep=PDF::loadview('ReportesCobranza.cortemensual', ['cobranza=>$cortem']);
-	
-
-//if (isset($pdf)) {
-//  $pdf->page_text(770, 580, "Page {PAGE_NUM} of {PAGE_COUNT}", $font, 10, array(0, 0, 0));
-//  return $cortemrep->download('CorteMensual.pdf');
-//}
 
 return $cortemrep->download('CorteMensual.pdf');
-
 });
 ?>
