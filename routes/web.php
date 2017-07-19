@@ -46,7 +46,7 @@ Route::post('/testpagado', function(){
    'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre');
     $mes=$arrayMeses[date('m')-1];
 
-	$pagado=DB::table('cobranza')
+	$pagado=DB::table('Cobranza')
 	->where('NContrato',$_POST['anion'])
 	->where('CveConcepto','1')
 	->where('Periodo',$mes)
@@ -61,12 +61,12 @@ Route::post('/testpagado', function(){
 });
 
 Route::post('/testconsulta', function(){
-	$resultado=DB::table('mediciones')
+	$resultado=DB::table('Mediciones')
 	->where('NContrato',$_POST['anio'])
 	->orderBy('IdMedicion','desc')
 	->first();
 
-	$pago=DB::table('cobranza')
+	$pago=DB::table('Cobranza')
 	->where('NContrato',$_POST['anio'])
 	->where('pagado','1')
 	->orderBy('idCobranza','desc')
@@ -76,7 +76,7 @@ Route::post('/testconsulta', function(){
    'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre');
     $mes=$arrayMeses[date('m')-1];
 
-	$pagado=DB::table('cobranza')
+	$pagado=DB::table('Cobranza')
 	->where('NContrato',4)
 	->where('CveConcepto','1')
 	->where('Periodo',$mes)
@@ -97,12 +97,12 @@ Route::post('/rezagospago',function(){
      
     $mes=$arrayMeses[date('m')-1];
 	$id=$_POST['anion'];
-	$eliminar=DB::table('rezago2')
+	$eliminar=DB::table('Rezago2')
 	->where('NContrato',$id)
 	->get();
 	$t=0;
 	foreach ($eliminar as $key => $e) {
-		$cn=DB::table('cobranza')
+		$cn=DB::table('Cobranza')
 		->where('NContrato',$e->nContrato)
 		->where('pagado',0)
 		->orderBy('idCobranza','desc')
@@ -110,7 +110,7 @@ Route::post('/rezagospago',function(){
 		$t=$t+$cn->Total;
 	}
 	foreach ($eliminar as $key => $e) {
-		$cn1=DB::table('cobranza')
+		$cn1=DB::table('Cobranza')
 		->where('NContrato',$e->nContrato)
 		->where('pagado',0)
 		->orderBy('idCobranza','desc')
@@ -133,17 +133,17 @@ $arrayMeses = array('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
 	$ano=date('Y');
 	$actual=date('Y-m-j');
 
-	$cb=DB::table('contratos')->get();
+	$cb=DB::table('Contratos')->get();
 	$day=date("j");
 	foreach ($cb as $key => $c) {
-		$test=DB::table('cobranza')
+		$test=DB::table('Cobranza')
 		->select('idCobranza','NContrato','FechaLimite','Periodo')
 		->where('NContrato',$c->NContrato)
 		->where('CveConcepto',5)
 		->where('Periodo',$mes)
 		->max('idCobranza');
 
-		$test2=DB::table('cobranza')
+		$test2=DB::table('Cobranza')
 		->select('idCobranza','NContrato','FechaLimite','Periodo')
 		->where('NContrato',$c->NContrato)
 		->where('CveConcepto',1)
@@ -152,22 +152,22 @@ $arrayMeses = array('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
 
 
 		if(is_null($test)&&(is_null($test2)) &&($c->EdoToma=='Activo')&& ($day>27)){
-			$resultado=DB::table('medicion')
+			$resultado=DB::table('Medicion')
 			->where('NContrato',$c->NContrato)
 			->orderBy('IdMedicion','desc')
 			->first();
-			DB::table('cobranza')
+			DB::table('Cobranza')
 				->insert([
 				['NContrato'=>$c->NContrato,'FechaPago'=>$actual,'HoraPago'=>$hora,'FechaLimite'=>$nuevafecha1,'Recargo'=>((($resultado->Importe)*10)/100),'Periodo'=>$mes,'Anio'=>$ano,'Factura'=>'0','Subtotal'=>$resultado->Importe,'iva'=>((($resultado->Importe)*16)/100),'Total'=>((($resultado->Importe)*10)/100)+($resultado->Importe)+((($resultado->Importe)*16)/100),'Cancelada'=>'0','pagado'=>'0',"CveConcepto"=>'5','caja'=>'0']
 				]);
 
 		}
 		if(is_null($test)&&(is_null($test2))&& ($c->EdoToma=='Suspendido')&& ($day>27)){
-			$resultado=DB::table('medicion')
+			$resultado=DB::table('Medicion')
 			->where('NContrato',$c->NContrato)
 			->orderBy('IdMedicion','desc')
 			->first();
-			DB::table('cobranza')
+			DB::table('Cobranza')
 				->insert([
 				['NContrato'=>$c->NContrato,'FechaPago'=>$actual,'HoraPago'=>$hora,'FechaLimite'=>$nuevafecha1,'Recargo'=>((($resultado->Importe)*10)/100),'Periodo'=>$mes,'Anio'=>$ano,'Factura'=>'0','Subtotal'=>$resultado->Importe,'iva'=>((($resultado->Importe)*16)/100),'Total'=>((($resultado->Importe)*10)/100)+($resultado->Importe)+((($resultado->Importe)*16)/100)/2,'Cancelada'=>'0','pagado'=>'0',"CveConcepto"=>'5','caja'=>'0']
 				]);
@@ -178,17 +178,17 @@ $arrayMeses = array('Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
 
 
 	
-$consulta=DB::table('cobranza as cz')
-	->join('contratos as c','c.NContrato','=','cz.NContrato')
+$consulta=DB::table('Cobranza as cz')
+	->join('Contratos as c','c.NContrato','=','cz.NContrato')
 	->select('cz.Periodo','cz.Anio','cz.idCobranza','cz.pagado','c.EdoToma', 'c.NContrato','cz.CveConcepto')
 	->get();
 
 foreach ($consulta as $key => $c) {
-$rezagos=DB::table('rezago2')
+$rezagos=DB::table('Rezago2')
 ->where('idCobranza','=',$c->NContrato)
 ->first();
 	if (is_null($rezagos)&&($c->pagado==('0'))&&($day>01)&&($c->CveConcepto=="5" or $c->CveConcepto=="1")) {
-		DB::table('rezago2')
+		DB::table('Rezago2')
 				->insert([
 				['idCobranza'=>$c->idCobranza,'NContrato'=>$c->NContrato,'IdNotificacion'=>'1']
 				]);	
@@ -197,23 +197,20 @@ $rezagos=DB::table('rezago2')
 }
 
 
-	$eliminar=DB::table('rezago2')
+$eliminar=DB::table('Rezago2')
 	->get();
 	foreach ($eliminar as $key => $e) {
-		$cn=DB::table('cobranzas')
-		->where('contrato',$e->nContrato)
-		//->where('Clave_conceptoCobros',5)
-		->orderBy('id','desc')
+		$cn=DB::table('Cobranza')
+		->where('NContrato',$e->nContrato)
+		->orderBy('idCobranza','desc')
 		->first();		
-		//echo "Estado".$cn->Pagado."Contrato".$cn->contrato."Id".$cn->id."-------";
-		if($cn->Pagado=='1' &&($cn->Clave_conceptoCobros=="5" or $cn->Clave_conceptoCobros=="1")){	
-		$cn1=DB::table('cobranzas')
-		//->select('contrato')
-		->where('contrato',$cn->contrato)
+		if($cn->pagado=='1' &&($cn->CveConcepto=="5" or $cn->CveConcepto=="1")){	
+		$cn1=DB::table('Cobranza')
+		->where('NContrato',$cn->contrato)
 		->where('Pagado','1')
 		->first();
-		//echo $cn1->contrato;
-				DB::table('rezagos')
+		
+				DB::table('Rezago2')
 				->where('nContrato',$cn1->contrato)
 				->delete();
 			}

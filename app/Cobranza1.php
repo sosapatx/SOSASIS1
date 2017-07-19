@@ -1,12 +1,12 @@
 <?php
 
-namespace App;
+namespace sosapatex;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Cobranza1 extends Model
 {
-    protected $table='cobranza';
+    protected $table='Cobranza';
     protected $primaryKey='idCobranza';
     public $timestamps= false;
 

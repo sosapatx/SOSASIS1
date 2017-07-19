@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace sosapatex\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
@@ -18,7 +18,7 @@ class Cobranza1Controller extends Controller
     {
         if($request){
             $query=trim($request->get('searchText'));
-            $contratos=DB::table('contratos as c')
+            $contratos=DB::table('Contratos as c')
             ->join('solicitante as s','c.CURP','=','s.CURP')
             ->select('c.NContrato','s.CURP','s.nombreS','s.telefonoS','s.Colonia','c.TipoToma','c.FechaContrato')
             ->where('s.nombreS','LIKE','%'.$query.'%')
@@ -42,7 +42,7 @@ class Cobranza1Controller extends Controller
     {
         //
          if($request){
-           $contrato=DB::table('contratos as c')
+           $contrato=DB::table('Contratos as c')
            ->join('solicitante as s','c.CURP','=','s.CURP')
            ->select('c.NContrato','s.CURP','s.nombreS','s.telefonoS','s.Colonia','c.TipoToma','c.FechaContrato','c.EdoToma')
             ->get();
