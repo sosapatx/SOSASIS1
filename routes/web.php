@@ -211,8 +211,8 @@ $eliminar=DB::table('Rezago2')
 			}
 	}
 
-	$cortem=App\cobranza::all();
-	$cortemrep=PDF::loadview('ReportesCobranza.cortemensual', ['cobranza=>$cortem']);
+	//$cortem=App\cobranza::all();
+	$cortemrep=PDF::loadview('ReportesCobranza.cortemensual');
 
 return $cortemrep->download('CorteMensual.pdf');
 });
