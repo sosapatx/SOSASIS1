@@ -20,7 +20,7 @@ Route::resource('cliente/Predio','PredioController');
 Route::resource('cliente/Ruta','RutaController');
 Route::resource('cliente/Contrato', 'ContratoController');
 Route::resource('cliente/ListaContratos','ListaContratosController');
-<?php
+
 
 /*
 |--------------------------------------------------------------------------
@@ -235,3 +235,4 @@ $rezagos=DB::table('rezago2')
 return $cortemrep->download('CorteMensual.pdf');
 
 });
+?>
