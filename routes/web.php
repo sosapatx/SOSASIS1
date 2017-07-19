@@ -20,11 +20,6 @@ Route::resource('cliente/Predio','PredioController');
 Route::resource('cliente/Ruta','RutaController');
 Route::resource('cliente/Contrato', 'ContratoController');
 Route::resource('cliente/ListaContratos','ListaContratosController');
-<<<<<<< HEAD
-=======
-
->>>>>>> b2059b4a776f691cece3159b193397afa45309f4
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes

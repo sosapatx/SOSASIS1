@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace sosapatex\Http\Controllers;
 
 use Illuminate\Http\Request;
 use DB;
