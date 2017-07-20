@@ -41,7 +41,10 @@ $app->singleton(
     sosapatex\Exceptions\Handler::class
 );
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> b787aca1fc0c24432e8dc6adb27883e35e366337
 /*
 |--------------------------------------------------------------------------
 | Return The Application

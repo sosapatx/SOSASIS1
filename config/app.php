@@ -177,7 +177,10 @@ return [
         sosapatex\Providers\EventServiceProvider::class,
         sosapatex\Providers\RouteServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+<<<<<<< HEAD
         Barryvdh\DomPDF\ServiceProvider::class,
+=======
+>>>>>>> b787aca1fc0c24432e8dc6adb27883e35e366337
 
     ],
 
@@ -229,7 +232,10 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
         'Form' => Collective\Html\FormFacade::class,
       'Html' => Collective\Html\HtmlFacade::class,
+<<<<<<< HEAD
       'PDF' => Barryvdh\DomPDF\Facade::class,
+=======
+>>>>>>> b787aca1fc0c24432e8dc6adb27883e35e366337
 
     ],
 

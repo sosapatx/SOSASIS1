@@ -29,6 +29,7 @@
 					<td>{{ $lc->noContrato}}</td>
 					<td>{{ $lc->direccion}}</td>
 					<td>
+<<<<<<< HEAD
 						
 						<div class="btn-group">
   							<button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown">Opciones<span class="caret"></span></button>
@@ -39,6 +40,8 @@
     							<li><a href="{{URL::action('ContratoController@edit',$lc->noContrato)}}">Contrato</a></li>
     						</ul>
 						</div>
+=======
+>>>>>>> b787aca1fc0c24432e8dc6adb27883e35e366337
 					</td>
 				</tr>
 				@endforeach

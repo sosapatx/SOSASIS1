@@ -25,7 +25,11 @@ class SolicitanteFormRequest extends Request
         return [
             'curp'=>'required',
             'nombreS'=>'required',
+<<<<<<< HEAD
             'direccionS'=>'required'
+=======
+            'direccion'=>'required'
+>>>>>>> b787aca1fc0c24432e8dc6adb27883e35e366337
         ];
     }
 }

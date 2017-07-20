@@ -21,11 +21,18 @@ class RutaController extends Controller
     {
         if($request){
           $query=trim($request->get('searchText'));
+<<<<<<< HEAD
             $Rutas=DB::table('Rutas')->where('nRuta','LIKE','%'.$query.'%')
             ->orwhere('Calle','LIKE','%'.$query.'%')
             ->orderBy('nRuta','desc')
             ->paginate(7);
             return view('cliente.Ruta.index',["Rutas"=>$Rutas,"searchText"=>$query]);
+=======
+            $ruta=DB::table('ruta')->where('noRuta','LIKE','%'.$query.'%')
+            ->orderBy('noRuta','desc')
+            ->paginate(7);
+            return view('cliente.Ruta.index',["ruta"=>$ruta,"searchText"=>$query]);
+>>>>>>> b787aca1fc0c24432e8dc6adb27883e35e366337
         }
     }
 
@@ -47,11 +54,19 @@ class RutaController extends Controller
      */
     public function store(RutaFormRequest $request)
     {
+<<<<<<< HEAD
         $Rutas=new mRuta;
         //$ruta->noRuta=$request->get('noRuta');
         $Rutas->Calle=$request->get('calle');
         $Rutas->Colonia=$request->get('colonia');
         $Rutas->save();
+=======
+        $ruta=new mRuta;
+        //$ruta->noRuta=$request->get('noRuta');
+        $ruta->calle=$request->get('calle');
+        $ruta->colonia=$request->get('colonia');
+        $ruta->save();
+>>>>>>> b787aca1fc0c24432e8dc6adb27883e35e366337
         return Redirect::to('cliente/Ruta');
     }
 
@@ -74,7 +89,11 @@ class RutaController extends Controller
      */
     public function edit($id)
     {
+<<<<<<< HEAD
         return view("cliente.Ruta.edit",["Rutas"=>mRuta::findOrFail($id)]);
+=======
+        return view("cliente.Ruta.edit",["ruta"=>mRuta::findOrFail($id)]);
+>>>>>>> b787aca1fc0c24432e8dc6adb27883e35e366337
     }
 
     /**
@@ -86,11 +105,19 @@ class RutaController extends Controller
      */
     public function update(RutaFormRequest $request, $id)
     {
+<<<<<<< HEAD
         $Rutas=mRuta::findOrFail($id);
         //$ruta->noRuta=$request->get('noRuta');
         $Rutas->Calle=$request->get('calle');
         $Rutas->Colonia=$request->get('colonia');
         $Rutas->update();
+=======
+        $ruta=mRuta::findOrFail($id);
+        //$ruta->noRuta=$request->get('noRuta');
+        $ruta->calle=$request->get('calle');
+        $ruta->colonia=$request->get('colonia');
+        $ruta->update();
+>>>>>>> b787aca1fc0c24432e8dc6adb27883e35e366337
         return Redirect::to('cliente/Ruta');
     }
 

@@ -10,9 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+<<<<<<< HEAD
 use Illuminate\Support\Facedes\Input;
 
 use Illuminate\Support\Facades\DB;
+=======
+>>>>>>> b787aca1fc0c24432e8dc6adb27883e35e366337
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,6 +25,7 @@ Route::resource('cliente/solicitante','SolicitanteController');
 Route::resource('cliente/Predio','PredioController');
 Route::resource('cliente/Ruta','RutaController');
 Route::resource('cliente/Contrato', 'ContratoController');
+<<<<<<< HEAD
 Route::resource('cliente/ListaContratos','ListaContratosController');
 /*
 |--------------------------------------------------------------------------
@@ -217,3 +221,6 @@ $eliminar=DB::table('Rezago2')
 return $cortemrep->download('CorteMensual.pdf');
 });
 ?>
+=======
+Route::resource('cliente/ListaContratos','ListaContratosController');
+>>>>>>> b787aca1fc0c24432e8dc6adb27883e35e366337

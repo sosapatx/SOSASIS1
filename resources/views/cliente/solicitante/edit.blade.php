@@ -3,7 +3,11 @@
 	<h3>Create</h3>
 	<div class="row">
 		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+<<<<<<< HEAD
 			<h3>EDITAR SOLICITANTE:  {{$solicitante->curp}}</h3>
+=======
+			<h3>editar Solicitante</h3>
+>>>>>>> b787aca1fc0c24432e8dc6adb27883e35e366337
 
 			@if(count ($errors)>0)
 			<div class="alert alert-danger">
@@ -28,8 +32,13 @@
 			</div>
 
 			<div class="form-group">
+<<<<<<< HEAD
 				<label for="direccionS">Direccion</label>
 				<input type="text" class="form-control" name="direccionS" value="{{$solicitante->direccionS}}">
+=======
+				<label for="direccion">Direccion</label>
+				<input type="text" class="form-control" name="direccion" value="{{$solicitante->direccion}}">
+>>>>>>> b787aca1fc0c24432e8dc6adb27883e35e366337
 			</div>
 
 			<div class="form-group">
@@ -43,8 +52,13 @@
 			</div>
 			
 			<div class="form-group">
+<<<<<<< HEAD
 				<label for="coloniaS">Colonia</label>
 				<input type="text" class="form-control" name="coloniaS" value="{{$solicitante->coloniaS}}">
+=======
+				<label for="colonia">Colonia</label>
+				<input type="text" class="form-control" name="colonia" value="{{$solicitante->colonia}}">
+>>>>>>> b787aca1fc0c24432e8dc6adb27883e35e366337
 			</div>
 
 			<div class="form-group">

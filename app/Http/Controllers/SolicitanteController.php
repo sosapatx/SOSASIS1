@@ -32,6 +32,7 @@ class SolicitanteController extends Controller
 
     public function store(SolicitanteFormRequest $request){
     	$solicitante=new mSolicitante;
+<<<<<<< HEAD
     	$solicitante->curp=strtoupper($request->get('curp'));
         $solicitante->nombreS=strtoupper($request->get('nombreS')); 
     	$solicitante->direccionS=strtoupper($request->get('direccionS'));
@@ -39,6 +40,15 @@ class SolicitanteController extends Controller
     	$solicitante->celular=$request->get('celular');
         $solicitante->coloniaS=strtoupper($request->get('coloniaS'));
         $solicitante->rfc=strtoupper($request->get('rfc'));
+=======
+    	$solicitante->curp=$request->get('curp');
+        $solicitante->nombreS=$request->get('nombreS'); //$request->get('nombreS');
+    	$solicitante->direccion=$request->get('direccion');
+    	$solicitante->telefono=$request->get('telefono');
+    	$solicitante->celular=$request->get('celular');
+        $solicitante->colonia=$request->get('colonia');
+        $solicitante->rfc=$request->get('rfc');
+>>>>>>> b787aca1fc0c24432e8dc6adb27883e35e366337
         $solicitante->save();
     	return Redirect::to('cliente/solicitante');
     }
@@ -53,6 +63,7 @@ class SolicitanteController extends Controller
 
     public function update(SolicitanteFormRequest $request, $id){
         $solicitante=mSolicitante::findOrFail($id);
+<<<<<<< HEAD
         $solicitante->curp=strtoupper($request->get('curp'));
         $solicitante->nombreS=strtoupper($request->get('nombreS'));
         $solicitante->direccionS=strtoupper($request->get('direccionS'));
@@ -60,6 +71,15 @@ class SolicitanteController extends Controller
         $solicitante->celular=$request->get('celular');
         $solicitante->coloniaS=strtoupper($request->get('coloniaS'));
         $solicitante->rfc=strtoupper($request->get('rfc'));
+=======
+        $solicitante->curp=$request->get('curp');
+        $solicitante->nombreS=$request->get('nombreS');
+        $solicitante->direccion=$request->get('direccion');
+        $solicitante->telefono=$request->get('telefono');
+        $solicitante->celular=$request->get('celular');
+        $solicitante->colonia=$request->get('colonia');
+        $solicitante->rfc=$request->get('rfc');
+>>>>>>> b787aca1fc0c24432e8dc6adb27883e35e366337
         $solicitante->update();
         return Redirect::to('cliente/solicitante');
     }
