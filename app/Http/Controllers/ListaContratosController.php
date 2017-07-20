@@ -20,12 +20,12 @@ class ListaContratosController extends Controller
     {
         if($request){
           $query=trim($request->get('searchText'));
-            $listacontratos=DB::table('listacontratos')->where('noContrato','LIKE','%'.$query.'%')
+            $listacontratos=DB::table('listacontratos') ->where('NContrato','=',$query)
             ->orwhere('nombreS','LIKE','%'.$query.'%')
-            ->orderBy('noContrato','desc')
-            ->paginate(7);
+            ->paginate('7');
             return view('cliente.ListaContratos.index',["listacontratos"=>$listacontratos,"searchText"=>$query]);
         }
+
     }
 
     /**

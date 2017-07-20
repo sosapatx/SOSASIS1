@@ -56,11 +56,11 @@ class PredioController extends Controller
         $predio->Localidad=strtoupper($request->get('localidad'));
         $predio->Transversal1=strtoupper($request->get('transversal1'));
         $predio->Transversal2=strtoupper($request->get('transversal2'));
-        $predio->Manzana=strtoupper($request->get('manzana'));
-        $predio->Lote=strtoupper($request->get('lote'));
-        $predio->Frente_mtrs=strtoupper($request->get('frente_m'));
-        $predio->Fondo_mtrs=strtoupper($request->get('fondo_m'));
-        $predio->Superficie=strtoupper($request->get('superficie'));
+        $predio->Manzana=$request->get('manzana');
+        $predio->Lote=$request->get('lote');
+        $predio->Frente_mtrs=$request->get('frente_m');
+        $predio->Fondo_mtrs=$request->get('fondo_m');
+        $predio->Superficie=$request->get('superficie');
         $predio->save();
         return Redirect::to('cliente/Predio');
     }
@@ -104,11 +104,11 @@ class PredioController extends Controller
         $predio->Localidad=strtoupper($request->get('localidad'));
         $predio->Transversal1=strtoupper($request->get('transversal1'));
         $predio->Transversal2=strtoupper($request->get('transversal2'));
-        $predio->Manzana=strtoupper($request->get('manzana'));
-        $predio->Lote=strtoupper($request->get('lote'));
-        $predio->Frente_mtrs=strtoupper($request->get('frente_m'));
-        $predio->Fondo_mtrs=strtoupper($request->get('fondo_m'));
-        $predio->Superficie=strtoupper($request->get('superficie'));
+        $predio->Manzana=$request->get('manzana');
+        $predio->Lote=$request->get('lote');
+        $predio->Frente_mtrs=$request->get('frente_m');
+        $predio->Fondo_mtrs=$request->get('fondo_m');
+        $predio->Superficie=$request->get('superficie');
         $predio->update();
         return Redirect::to('cliente/Predio');
     }

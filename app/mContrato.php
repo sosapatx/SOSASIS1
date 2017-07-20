@@ -14,6 +14,7 @@ class mContrato extends Model
 
 	protected $fillable=[ 
         'CURP',
+        'IdPredio',
         'nRuta',
         'Descuento',
         'NMedidor',

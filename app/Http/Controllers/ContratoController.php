@@ -40,7 +40,7 @@ class ContratoController extends Controller
 
         $predio=DB::table('predio')
         ->join ('solicitante','Predio.CURP','=','solicitante.CURP')
-        ->select('predio.CURP','solicitante.nombreS' )
+        ->select('predio.CURP','solicitante.nombreS','predio.IdPredio','predio.Direccion')
         ->get();
 
         $fecha=Carbon::now();
@@ -59,6 +59,7 @@ class ContratoController extends Controller
     {
         $contrato=new mContrato;
         $contrato->CURP=$request->get('CURP');
+        $contrato->IdPredio=$request->get('IdPredio');
         $contrato->nRuta=$request->get('rutaC');
         $contrato->Descuento=strtoupper($request->get('descuento'));
         $contrato->NMedidor=strtoupper($request->get('noMedidor'));
@@ -70,7 +71,7 @@ class ContratoController extends Controller
         $contrato->FechaContrato=strtoupper($request->get('fechaContrato'));
         $contrato->Longuitud=strtoupper($request->get('longuitud'));
         $contrato->Latitud=strtoupper($request->get('latitud'));
-        $contrato->clave_TA=strtoupper($request->get('clave_TA'));
+        $contrato->clave_TA=1;//strtoupper($request->get('clave_TA'));
         $contrato->save();
         return Redirect::to('cliente/Contrato');
     }
