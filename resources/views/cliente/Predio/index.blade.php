@@ -3,10 +3,17 @@
 
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+<<<<<<< HEAD
 		<h3>LISTADO DE PREDIOS <a href="Predio/create"><button class="btn btn-success">Nuevo Predio</button></a></h3>
 		@include('cliente.Predio.search')
 
 		<a href="{{URL::action('ContratoController@index')}}"><button class="btn btn-success">Contratos</button></a>
+=======
+		<h3>Listado de Predios <a href="Predio/create"><button class="btn btn-success">NUEVO PREDIO</button></a></h3>
+		@include('cliente.Predio.search')
+
+		<a href="{{URL::action('ContratoController@create')}}"><button class="btn btn-success">CONTRATOS</button></a>
+>>>>>>> b787aca1fc0c24432e8dc6adb27883e35e366337
 		<br>
 		<br>
 	</div>

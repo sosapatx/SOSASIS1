@@ -2,3 +2,10 @@ pruba push
 
 
 ya merito queda
+<<<<<<< HEAD
+
+
+no quedo el branch
+=======
+Luis alberto
+>>>>>>> f9982df77bcb015a34b9f70792ab79a5c174063c

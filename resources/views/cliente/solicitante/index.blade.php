@@ -2,11 +2,15 @@
 @section ('contenido')
 <div class="row">
 	<div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
+<<<<<<< HEAD
 		<h3>LISTADO DE SOLICITANTES</h3> 
 		<br>
 		<a href="solicitante/create"><button class="btn btn-success">Nuevo Solicitante</button></a>
 		<br>
 		<br>
+=======
+		<h3>Listado de Clientes <a href="solicitante/create"><button class="btn btn-success">Nuevo</button></a></h3>
+>>>>>>> b787aca1fc0c24432e8dc6adb27883e35e366337
 		@include('cliente.solicitante.search')
 
 		<a href="{{URL::action('PredioController@index')}}"><button class="btn btn-success">Predios</button></a>
@@ -35,10 +39,17 @@
 					<td>{{ $sol->idSolicitante}}</td>
 					<td>{{ $sol->curp}}</td>
 					<td>{{ $sol->nombreS}}</td>
+<<<<<<< HEAD
 					<td>{{ $sol->direccionS}}</td>
 					<td>{{ $sol->telefono}}</td>
 					<td>{{ $sol->celular}}</td>
 					<td>{{ $sol->coloniaS}}</td>
+=======
+					<td>{{ $sol->direccion}}</td>
+					<td>{{ $sol->telefono}}</td>
+					<td>{{ $sol->celular}}</td>
+					<td>{{ $sol->colonia}}</td>
+>>>>>>> b787aca1fc0c24432e8dc6adb27883e35e366337
 					<td>{{ $sol->rfc}}</td>
 					<td>
 						<a href="{{URL::action('SolicitanteController@edit',$sol->idSolicitante)}}"><button class="btn btn-info">Editar</button></a>

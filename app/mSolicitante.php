@@ -16,6 +16,10 @@ class mSolicitante extends Model
     protected $fillable=[
     	'curp',
     	'nombreS',
+<<<<<<< HEAD
     	'direccionS'
+=======
+    	'direccion'
+>>>>>>> b787aca1fc0c24432e8dc6adb27883e35e366337
     ];
 }

@@ -38,15 +38,27 @@ class ContratoController extends Controller
     {   
         $ruta=DB::table('ruta')->where('noRuta','>=','0')->get();
 
+<<<<<<< HEAD
         $predio=DB::table('predio')
         ->join ('solicitante','predio.curpP','=','solicitante.curp')
         ->select('predio.curpP','solicitante.nombreS' )
         ->get();
+=======
+        $solicitante=DB::table('solicitante')->where('idSolicitante','>','0')->get();
+
+        $predio=DB::table('predio')->where('idPredio', '>','0')->get();
+        
+        $contrato=DB::table('contrato')->where('noContrato', '>','0')->get();
+>>>>>>> b787aca1fc0c24432e8dc6adb27883e35e366337
 
         $fecha=Carbon::now();
         $fecha=$fecha->format('d-m-y');
 
+<<<<<<< HEAD
         return view('cliente.Contrato.create',array("predio"=>$predio,"ruta"=>$ruta));
+=======
+        return view('cliente.Contrato.create',array("solicitante"=>$solicitante,"ruta"=>$ruta,"predio"=>$predio, "contrato"=>$contrato));
+>>>>>>> b787aca1fc0c24432e8dc6adb27883e35e366337
     }
 
     /**
@@ -55,6 +67,7 @@ class ContratoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+<<<<<<< HEAD
     public function store(ContratoFormRequest $request)
     {
         $contrato=new mContrato;
@@ -64,6 +77,18 @@ class ContratoController extends Controller
         $contrato->noMedidor=strtoupper($request->get('noMedidor'));
         $contrato->marca=strtoupper($request->get('marca'));
         $contrato->diametroToma=$request->get('diametroToma');
+=======
+    public function store(Request $request)
+    {
+        $contrato=new mContrato;
+        $contrato->predioC=strtoupper($request->get('predioC'));
+        $contrato->curpC=strtoupper($request->get('curpC'));
+        $contrato->rutaC=strtoupper($request->get('RutaC'));
+        $contrato->descuento=strtoupper($request->get('descuento'));
+        $contrato->noMedidor=strtoupper($request->get('noMedidor'));
+        $contrato->marca=strtoupper($request->get('marca'));
+        $contrato->diametroToma=strtoupper($request->get('diametroToma'));
+>>>>>>> b787aca1fc0c24432e8dc6adb27883e35e366337
         $contrato->tipoToma=strtoupper($request->get('tipoToma'));
         $contrato->edoToma=strtoupper($request->get('edoToma'));
         $contrato->clasificacion=strtoupper($request->get('clasificacion'));
