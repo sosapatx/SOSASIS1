@@ -23,7 +23,7 @@ $_SESSION['usuario'] = 'Luis Alberto Madrid Díaz';
 		@include('layouts.search')
 	</div>	
 </div>
-<a href="#" class="btn btn-primary glyphicon-hourglass" data-target="#c1" data-toggle="modal"> Corte diario</a> <a href="#" class="btn btn-primary glyphicon-hourglass" data-target="#c2" data-toggle="modal"> Corte mensual</a> <a href="#" class="btn btn-info" >Ingreso por agua</a>  <a href="#" class="btn btn-info">Ingreso por alcantarillado</a>  <a href="#" class="btn btn-info">Ingreso por saneamiento</a>
+<a href="#" class="btn btn-primary glyphicon-hourglass" data-target="#c1" data-toggle="modal"> Corte diario</a> <a href="#" class="btn btn-primary glyphicon-hourglass" data-target="#c2" data-toggle="modal"> Corte mensual</a> <a href="{{route('agua.index')}}" class="btn btn-info" >Ingreso por agua</a>  <a href="{{route('alcan.index')}}" class="btn btn-info">Ingreso por alcantarillado</a>  <a href="{{route('saneamiento.index')}}" class="btn btn-info">Ingreso por saneamiento</a>
 
 <!--<FORM name="form">
 <input type="text" name="nombre" value="El nombre">
